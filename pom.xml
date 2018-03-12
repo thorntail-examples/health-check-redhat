@@ -20,22 +20,22 @@
   <parent>
     <groupId>io.openshift</groupId>
     <artifactId>booster-parent</artifactId>
-    <version>10</version>
+    <version>20</version>
   </parent>
 
   <groupId>io.openshift.boosters</groupId>
   <artifactId>wfswarm-health-check</artifactId>
-  <version>7.0.0-redhat-7-SNAPSHOT</version>
+  <version>7.0.1-redhat-1-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>WildFly Swarm Booster - Health Check Mission</name>
 
   <properties>
-    <version.wildfly.swarm>7.0.0.redhat-8</version.wildfly.swarm>
-    <version.resteasy>3.0.19.Final</version.resteasy>
-    <version.arquillian.cube>1.9.2</version.arquillian.cube>
+    <version.wildfly.swarm>7.0.1.redhat-20</version.wildfly.swarm>
+    <version.resteasy>3.0.24.Final</version.resteasy>
+    <version.restassured>3.0.7</version.restassured>
+    <version.awaitility>3.1.0</version.awaitility>
     <version.override.jackson>2.7.7</version.override.jackson>
-    <failOnMissingWebXml>false</failOnMissingWebXml>
   </properties>
 
   <dependencyManagement>
@@ -51,14 +51,6 @@
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>bom-certified</artifactId>
         <version>${version.wildfly.swarm}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.arquillian.cube</groupId>
-        <artifactId>arquillian-cube-bom</artifactId>
-        <version>${version.arquillian.cube}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -112,6 +104,20 @@
       <groupId>org.jboss.arquillian.junit</groupId>
       <artifactId>arquillian-junit-container</artifactId>
       <version>1.1.12.Final</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${version.restassured}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.awaitility</groupId>
+      <artifactId>awaitility</artifactId>
+      <version>${version.awaitility}</version>
       <scope>test</scope>
     </dependency>
 
