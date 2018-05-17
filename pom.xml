@@ -25,13 +25,13 @@
 
   <groupId>io.openshift.boosters</groupId>
   <artifactId>wfswarm-health-check</artifactId>
-  <version>7.0.1-redhat-2-SNAPSHOT</version>
+  <version>7.1.0-redhat-1-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>WildFly Swarm Booster - Health Check Mission</name>
 
   <properties>
-    <version.wildfly.swarm>7.0.1.redhat-20</version.wildfly.swarm>
+    <version.wildfly.swarm>7.1.0.redhat-77</version.wildfly.swarm>
     <version.resteasy>3.0.24.Final</version.resteasy>
     <version.restassured>3.0.7</version.restassured>
     <version.awaitility>3.1.0</version.awaitility>
