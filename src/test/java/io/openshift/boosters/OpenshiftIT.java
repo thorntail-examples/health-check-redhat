@@ -28,9 +28,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.awaitility.Awaitility.await;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.when;
+import static org.awaitility.Awaitility.await;
 import static org.hamcrest.Matchers.containsString;
 
 /**
@@ -44,7 +44,7 @@ public class OpenshiftIT {
     private String url;
 
     @Before
-    public void setup() {
+    public void setup() throws Exception {
         RestAssured.baseURI = url;
     }
 
