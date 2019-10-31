@@ -182,6 +182,20 @@
             <classpathDependencyExclude>org.arquillian.cube:arquillian-cube-openshift</classpathDependencyExclude>
             <classpathDependencyExclude>org.arquillian.cube:arquillian-cube-kubernetes</classpathDependencyExclude>
           </classpathDependencyExcludes>
+          <systemPropertyVariables>
+            <!--
+              - When the project is built against an empty local Maven repo, some artifacts are not downloaded by Maven,
+              - because they are not transitive dependencies of any Thorntail fraction. They only come in as module
+              - dependencies, so they are downloaded whenever an uberjar is constructed. When the Thorntail Maven plugin
+              - builds an uberjar, it is aware of Maven repositories configured in the POM, so it resolves these
+              - artifacts correctly. However, before the Thorntail Maven plugin is executed (in the `package` phase),
+              - Arquillian tests need to run (in the `test` phase). The Thorntail Arquillian adapter builds a small
+              - uberjar without the Maven repo, so module dependencies are resolved from external repositories. At that
+              - time, the POM configuration isn't available, so we have to supply this system property to make sure
+              - that the Red Hat Maven Repository is accessible.
+              -->
+            <thorntail.build.repos>https://maven.repository.redhat.com/ga/,https://maven.repository.redhat.com/earlyaccess/all/</thorntail.build.repos>
+          </systemPropertyVariables>
         </configuration>
       </plugin>
       <plugin>
