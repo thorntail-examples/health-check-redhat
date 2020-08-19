@@ -21,7 +21,7 @@
 
   <groupId>io.thorntail.example</groupId>
   <artifactId>thorntail-health-check</artifactId>
-  <version>2.7.0-redhat-2-SNAPSHOT</version>
+  <version>2.7.1-redhat-1-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>Thorntail - Health Check</name>
@@ -46,8 +46,8 @@
     <version.maven-war-plugin>3.3.1</version.maven-war-plugin>
     <version.restassured>4.3.1</version.restassured>
     <version.resteasy>3.11.2.Final-redhat-00002</version.resteasy>
-    <version.thorntail>2.7.0.Final-redhat-00003</version.thorntail>
-    <version.wildfly-core>10.1.7.Final-redhat-00001</version.wildfly-core>
+    <version.thorntail>2.7.1.Final-redhat-00001</version.thorntail>
+    <version.wildfly-core>10.1.11.Final-redhat-00001</version.wildfly-core>
 
     <fabric8.generator.from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.8</fabric8.generator.from>
   </properties>
